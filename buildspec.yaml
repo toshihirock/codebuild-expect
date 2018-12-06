@@ -1,0 +1,8 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - sudo apt-get update
+      - sudo apt-get install -y expect
+      - expect -c "spawn passwd irc ; expect \"Enter new UNIX password:\" ; send -- \"hogefuga\n\" ; expect \"Retype new UNIX password:\" ; send -- \"hogefuga\n\" ; expect \"passwd: password updated successfully\" ; send -- \"exit\n\""
