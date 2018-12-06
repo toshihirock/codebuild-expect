@@ -5,3 +5,4 @@ phases:
     commands:
       - apt-get update
       - apt-get install -y expect
+      - expect -c "spawn passwd irc ; expect \"Enter new UNIX password:\" ; send -- \"hogefuga\n\" ; expect \"Retype new UNIX password:\" ; send -- \"hogefuga\n\" ; expect \"passwd: password updated successfully\" ; send -- \"exit\n\""
